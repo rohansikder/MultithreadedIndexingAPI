@@ -16,17 +16,21 @@ public class Runner {
 		System.out.println("*                                                          *");
 		System.out.println("************************************************************");
 		System.out.println("(1) Specify Text File");
-		System.out.println("(2) Configure Dictionary");
-		System.out.println("(3) Configure Common Words");
-		System.out.println("(4) Specify Output File");
+		System.out.println("(2) Configure Dictionary - (Not Required - Dictionary provided)");
+		System.out.println("(3) Configure Common Words - (Not Required - Google Top 1000 Word's provided)");
+		System.out.println("(4) Specify Output File - (Not Required - Default will be output.txt)");
 		System.out.println("(5) Execute");
 		System.out.println("(6) Quit");
 
 		// Variables
 		int choice;
-		String fileDir;
-		Scanner scanner = new Scanner(System.in); // Create a Scanner object
-
+		String fileDir = "";
+		String dictionary = "./Dictionary.csv";
+		String ignoreWords = "./google-1000.txt";
+		String outputFileName = "output.txt";
+		Scanner scanner = new Scanner(System.in);
+		
+		
 		// Menu choice for user
 		do {
 			//Output a menu of options and solicit text from the user
@@ -40,25 +44,35 @@ public class Runner {
 				System.out.println("Please enter full directory of Text File:");
 				fileDir = scanner.next();
 				//"./SampleTextFiles/biblegod.txt"
-				new ProcessFiles().go(fileDir);
 				
 			} else if (choice == 2) {
-
+				
+				System.out.println("Please enter full directory of Dictionary File:");
+				dictionary = scanner.next();
+				
 			} else if (choice == 3) {
-
+				System.out.println("Please enter full directory of Ignore word File:");
+				ignoreWords = scanner.next();
+			
 			} else if (choice == 4) {
-
+				
+				System.out.println("Please enter a name which the output file will be named:");
+				outputFileName = scanner.next();
+				
 			} else if (choice == 5) {
-
+				new ProcessFiles().go(fileDir, dictionary, ignoreWords, outputFileName);
+			} else if (choice == 6) {
+				System.out.println("Exiting!");
+			}else {
+				System.out.println("Please enter a valid option!!!");
 			}
-		
 		} while (choice != 6);
 		
 		
 		scanner.close();//Closing scanner
 		
 		// You may want to include a progress meter in you assignment!
-		System.out.print(ConsoleColour.YELLOW); // Change the colour of the console text
+		System.out.print(ConsoleColour.RED); // Change the colour of the console text
 		int size = 100; // The size of the meter. 100 equates to 100%
 		for (int i = 0; i < size; i++) { // The loop equates to a sequence of processing steps
 			printProgress(i + 1, size); // After each (some) steps, update the progress meter

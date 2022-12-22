@@ -1,11 +1,15 @@
 package ie.atu.sw;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class WordDetail {
+	String word;
+	String wordType;
 	String definition;
-	List<Integer> pages;
+	List<Integer> pages = new ArrayList<>();
 	
+	//Constructor
 	public WordDetail(String definition, List<Integer> pages) {
 		super();
 		this.definition = definition;
@@ -29,9 +33,5 @@ public class WordDetail {
 		this.pages = pages;
 	}
 
-	public boolean isListed() {
-		return pages.size() > 0;
-	}
-	
 }
 
