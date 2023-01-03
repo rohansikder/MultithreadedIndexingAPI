@@ -153,7 +153,7 @@ public class ProcessFiles {
 	 */
 	//Wrting To file - Big O Notation: O(n)
 	public void writeToFile(String fileName) throws Exception {
-		FileWriter fw = new FileWriter(fileName);
+		FileWriter fw = new FileWriter(fileName+".txt");
 		PrintWriter out = new PrintWriter(fw);
 		
 		Iterator<String> iterator = index.iterator();

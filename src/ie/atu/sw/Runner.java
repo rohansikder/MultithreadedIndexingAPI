@@ -35,7 +35,7 @@ public class Runner {
 		String fileDir = "";
 		String dictionary = "./Dictionary.csv";
 		String ignoreWords = "./google-1000.txt";
-		String outputFileName = "output.txt";
+		String outputFileName = "output";
 		Scanner scanner = new Scanner(System.in);
 		
 		
