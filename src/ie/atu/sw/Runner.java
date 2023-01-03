@@ -2,6 +2,14 @@ package ie.atu.sw;
 
 import java.util.Scanner;
 
+/**
+ * Runner has the main here the user is given the menu and input options to enter Text file Directory
+ * Dictionary, Common words, Output file and to execute and exit.
+ * 
+ * @author Rohan Sikder
+ *
+ */
+
 public class Runner {
 
 	public static void main(String[] args) throws Exception {
@@ -80,7 +88,7 @@ public class Runner {
 		}
 	}
 
-	/*
+	/**
 	 * Terminal Progress Meter ----------------------- You might find the progress
 	 * meter below useful. The progress effect works best if you call this method
 	 * from inside a loop and do not call System.out.println(....) until the

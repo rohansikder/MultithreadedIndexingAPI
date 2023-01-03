@@ -3,6 +3,15 @@ package ie.atu.sw;
 import java.util.ArrayList;
 import java.util.List;
 
+
+/**
+ * 	This class which creates a WordDetail
+ * 	Which includes a String word, wordType, definition.
+ *  and a Integer List, as pages.
+ *  
+ * @author Rohan Sikder
+ */
+
 public class WordDetail {
 	String word;
 	String wordType;
@@ -20,7 +29,8 @@ public class WordDetail {
 	public String getDef() {
 		return definition;
 	}
-
+	
+	
 	public void setDef(String def) {
 		this.definition = def;
 	}
