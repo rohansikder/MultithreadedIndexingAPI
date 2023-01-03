@@ -7,6 +7,13 @@ and pages numbers that the word appeared on.
 
 The words are filtered using Googles top 1000 Common word, But this can be changed by the menu
 
+How to run program:
+
+Please below command in CMD. The dictionary and  common words should be in the same directory:
+```bash
+java --enable-preview -cp ./indexer.jar ie.atu.sw.Runner
+```
+
 
 Menu Options:
 1. Specify Text File - Please enter ebook directory into here.
@@ -17,3 +24,6 @@ Menu Options:
 6. Quit - This exists the application
 
 Options 2 to 4 are not required as they are provided for you.
+
+How it works:
+This program takes in an eBook and reads it line by line using virtual threads and then splits it up into individual words and puts it into a set, this is also done for the dictionary and common words which the program disregards when outputting the file. The program checks through the words from the eBook and dictionary and if they match it outputs its definition. Before this is done the most common words are removed from eBook words.
